@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "includes.h": "c",
+        "stdio.h": "c",
+        "tuple": "c",
+        "algorithm": "c",
+        "cstdint": "c",
+        "type_traits": "c",
+        "xutility": "c"
+    }
+}
