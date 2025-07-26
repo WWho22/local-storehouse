@@ -17,6 +17,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>  
 #include "stm32f4xx.h"
 
 
@@ -31,6 +32,9 @@
 
 /*数据结构配置*/
 #include "ringbuffer.h"
+
+/*平台信号量配置*/
+#include "platform_mutex.h"
 
 
 
@@ -63,13 +67,21 @@ extern TaskHandle_t StartTask_handle;
 extern TaskHandle_t led0_task_handle;
 extern TaskHandle_t led1_task_handle;
 extern TaskHandle_t float_task_handle;
-extern TaskHandle_t ESP8266_Read_task_handle;
+extern TaskHandle_t ESP8266_Palse_task_handle;
+extern TaskHandle_t ESP8266_Write_task_handle;
+extern TaskHandle_t AT_Test_task_handle;
 extern SemaphoreHandle_t mutexhandle;
 extern RingBuffer test_RingBuffer;
 extern RingBuffer Uart4_RingBuffer;
-extern SemaphoreHandle_t Esp8266_ParseHandler;
-extern SemaphoreHandle_t Esp8266_SendHandler;
+extern platform_mutex_t UsartSend;
+extern SemaphoreHandle_t Esp8266_ParseHandler;//Esp8266的回复处理信号量
+extern SemaphoreHandle_t Esp8266_SendHandler;//Esp8266的AT命令发送信号量
 extern int AT_LEN;
+//AT命令
+
+extern enum URC_Handle_Status URC_Status;//服务器URC回复的处理状态
+extern enum write_status Write_Status;
+
 //定义所有的FreeRTOS任务
 void queuesend_Task(void* pvParameters);
 void queuereceive_Task(void* pvParameters);
@@ -77,9 +89,9 @@ void start_task(void* pvParameters);
 void led0_task(void* arg);
 void led1_task(void* arg);
 void float_task(void* arg);
-void ESP8266_ReadTask(void* arg);
+void ESP8266_PalseTask(void* arg);
 void ESP8266_WriteTask(void* arg);
-
+void AT_TestTask(void* arg);
 
 
 

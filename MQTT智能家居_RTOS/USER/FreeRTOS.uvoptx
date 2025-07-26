@@ -155,18 +155,82 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>55</LineNumber>
+          <LineNumber>59</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134225518</Address>
+          <Address>134226170</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\UESTC\FreeRTOS\MQTT鏅鸿兘瀹跺眳_RTOS\USER\main.c</Filename>
+          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\USER\main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\FreeRTOS\main.c\55</Expression>
+          <Expression>\\FreeRTOS\main.c\59</Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>41</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134222604</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\HARDWARE\ESP8266\esp8266.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\FreeRTOS\../HARDWARE/ESP8266/esp8266.c\41</Expression>
+        </Bp>
+        <Bp>
+          <Number>2</Number>
+          <Type>0</Type>
+          <LineNumber>24</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134226308</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\MQTTClient\platform\FreeRTOS\platform_mutex.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\FreeRTOS\../MQTTClient/platform/FreeRTOS/platform_mutex.c\24</Expression>
+        </Bp>
+        <Bp>
+          <Number>3</Number>
+          <Type>0</Type>
+          <LineNumber>54</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134222652</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\HARDWARE\ESP8266\esp8266.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\FreeRTOS\../HARDWARE/ESP8266/esp8266.c\54</Expression>
+        </Bp>
+        <Bp>
+          <Number>4</Number>
+          <Type>0</Type>
+          <LineNumber>201</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134219960</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\TASK\test_task.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\FreeRTOS\../TASK/test_task.c\201</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -205,7 +269,24 @@
           <WinNumber>1</WinNumber>
           <ItemText>AT_LEN</ItemText>
         </Ww>
+        <Ww>
+          <count>7</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>UsartSend</ItemText>
+        </Ww>
+        <Ww>
+          <count>8</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>ret</ItemText>
+        </Ww>
       </WatchWindow1>
+      <WatchWindow2>
+        <Ww>
+          <count>0</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>m</ItemText>
+        </Ww>
+      </WatchWindow2>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>
@@ -214,8 +295,8 @@
         <periodic>0</periodic>
         <aLwin>1</aLwin>
         <aCover>0</aCover>
-        <aSer1>0</aSer1>
-        <aSer2>1</aSer2>
+        <aSer1>1</aSer1>
+        <aSer2>0</aSer2>
         <aPa>0</aPa>
         <viewmode>1</viewmode>
         <vrSel>0</vrSel>
@@ -697,7 +778,7 @@
 
   <Group>
     <GroupName>FreeRTOS_CORE</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1045,7 +1126,7 @@
 
   <Group>
     <GroupName>Network</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

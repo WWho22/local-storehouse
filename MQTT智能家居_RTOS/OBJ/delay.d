@@ -59,6 +59,7 @@
 ..\obj\delay.o: ..\FreeRTOS\include\semphr.h
 ..\obj\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\obj\delay.o: ..\HARDWARE\LED\led.h
 ..\obj\delay.o: ..\HARDWARE\USART2\usart2.h
 ..\obj\delay.o: ..\HARDWARE\GPIO\gpio.h
@@ -66,3 +67,4 @@
 ..\obj\delay.o: ..\HARDWARE\OLED\oled.h
 ..\obj\delay.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\delay.o: ..\HARDWARE\RingBuffer\ringbuffer.h
+..\obj\delay.o: ..\MQTTClient\platform\FreeRTOS\platform_mutex.h

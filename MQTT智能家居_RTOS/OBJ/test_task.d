@@ -59,6 +59,7 @@
 ..\obj\test_task.o: ..\FreeRTOS\include\semphr.h
 ..\obj\test_task.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\test_task.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\test_task.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\obj\test_task.o: ..\HARDWARE\LED\led.h
 ..\obj\test_task.o: ..\HARDWARE\USART2\usart2.h
 ..\obj\test_task.o: ..\HARDWARE\GPIO\gpio.h
@@ -66,3 +67,4 @@
 ..\obj\test_task.o: ..\HARDWARE\OLED\oled.h
 ..\obj\test_task.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\test_task.o: ..\HARDWARE\RingBuffer\ringbuffer.h
+..\obj\test_task.o: ..\MQTTClient\platform\FreeRTOS\platform_mutex.h

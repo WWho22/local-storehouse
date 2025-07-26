@@ -59,6 +59,7 @@
 ..\obj\oled.o: ..\FreeRTOS\include\semphr.h
 ..\obj\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\oled.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\obj\oled.o: ..\HARDWARE\LED\led.h
 ..\obj\oled.o: ..\HARDWARE\USART2\usart2.h
 ..\obj\oled.o: ..\HARDWARE\GPIO\gpio.h
@@ -66,3 +67,4 @@
 ..\obj\oled.o: ..\HARDWARE\OLED\oled.h
 ..\obj\oled.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\oled.o: ..\HARDWARE\RingBuffer\ringbuffer.h
+..\obj\oled.o: ..\MQTTClient\platform\FreeRTOS\platform_mutex.h

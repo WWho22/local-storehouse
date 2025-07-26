@@ -59,6 +59,7 @@
 ..\obj\ringbuffer.o: ..\FreeRTOS\include\semphr.h
 ..\obj\ringbuffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\ringbuffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\ringbuffer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\obj\ringbuffer.o: ..\HARDWARE\LED\led.h
 ..\obj\ringbuffer.o: ..\HARDWARE\USART2\usart2.h
 ..\obj\ringbuffer.o: ..\HARDWARE\GPIO\gpio.h
@@ -66,3 +67,4 @@
 ..\obj\ringbuffer.o: ..\HARDWARE\OLED\oled.h
 ..\obj\ringbuffer.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\ringbuffer.o: ..\HARDWARE\RingBuffer\ringbuffer.h
+..\obj\ringbuffer.o: ..\MQTTClient\platform\FreeRTOS\platform_mutex.h

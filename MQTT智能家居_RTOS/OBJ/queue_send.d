@@ -59,6 +59,7 @@
 ..\obj\queue_send.o: ..\FreeRTOS\include\semphr.h
 ..\obj\queue_send.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\queue_send.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\queue_send.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
 ..\obj\queue_send.o: ..\HARDWARE\LED\led.h
 ..\obj\queue_send.o: ..\HARDWARE\USART2\usart2.h
 ..\obj\queue_send.o: ..\HARDWARE\GPIO\gpio.h
@@ -66,3 +67,4 @@
 ..\obj\queue_send.o: ..\HARDWARE\OLED\oled.h
 ..\obj\queue_send.o: ..\HARDWARE\ESP8266\esp8266.h
 ..\obj\queue_send.o: ..\HARDWARE\RingBuffer\ringbuffer.h
+..\obj\queue_send.o: ..\MQTTClient\platform\FreeRTOS\platform_mutex.h

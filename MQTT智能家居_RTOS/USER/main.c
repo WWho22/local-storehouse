@@ -9,15 +9,18 @@ TaskHandle_t StartTask_handle;
 TaskHandle_t led0_task_handle;
 TaskHandle_t led1_task_handle;
 TaskHandle_t float_task_handle;
-TaskHandle_t ESP8266_Read_task_handle;
+TaskHandle_t ESP8266_Palse_task_handle;
+TaskHandle_t ESP8266_Write_task_handle;
+TaskHandle_t AT_Test_task_handle;
 QueueHandle_t x1queuehandle;
 QueueHandle_t x2queuehandle;
 SemaphoreHandle_t mutexhandle;
+//FreeRtos的互斥量没有实现谁使用谁释放的功能，只能靠用户自己遵守这个特性
+platform_mutex_t UsartSend;
 SemaphoreHandle_t Esp8266_ParseHandler;
 SemaphoreHandle_t Esp8266_SendHandler;
 RingBuffer test_RingBuffer;
 RingBuffer Uart4_RingBuffer;
-SemaphoreHandle_t Uart4_RingBuffer_mutex;
 
 char Public_buffer[20];
 char Uart4_buffer[20];
@@ -51,12 +54,12 @@ int main(void)
 	delay_init(168);	
 	//初始化延时函数
    prvHardware_Init();
-   Uart4_RingBuffer_mutex = xSemaphoreCreateMutex();
-	Esp8266_ParseHandler = xSemaphoreCreateBinary();
-	Esp8266_SendHandler = xSemaphoreCreateBinary();
+	 UART4_Lock_Init(UsartSend);
+	 Esp8266_ParseHandler = xSemaphoreCreateBinary();
+	 Usart_SendString(USART2,"Initilize OK\r\n");
 //   Usart_SendString(UART4,"Initialize Finish");
 //   Usart_SendString(UART4,"AT+CWMODE=3\r\n",40000);
-	AT_SendCmd("AT+CWMODE=3\r\n",40000);
+//	 AT_SendCmd("AT+CWMODE=3\r\n",40000);
 //	Usart_SendString(USART2,"AT");
    xTaskCreate( (TaskFunction_t) start_task,
                             (const char *) "start",     /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
@@ -65,45 +68,8 @@ int main(void)
                             (UBaseType_t) 1,
                             (TaskHandle_t *) &StartTask_handle );
 	
-
-//    x1queuehandle = xQueueCreate(5,sizeof(int32_t));
-//    xTaskCreate( (TaskFunction_t) queuesend_Task,
-//                             (const char *) "sender1",     /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
-//                             (uint16_t       )512,
-//                             (void *) 100,
-//                             (UBaseType_t) 1,
-//                             (TaskHandle_t *) &queuesend_Task1_Handle );
-// 	xTaskCreate( (TaskFunction_t) queuesend_Task,
-//                             (const char *) "sender2",     /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
-//                             (uint16_t       )512,
-//                             (void *) 200,
-//                             (UBaseType_t) 1,
-//                             (TaskHandle_t *) &queuesend_Task2_Handle );
-// 	xTaskCreate((TaskFunction_t) queuereceive_Task,
-//                             (const char *) "Receiver",     /*lint !e971 Unqualified char types are allowed for strings and single characters only. */
-//                             (uint16_t       )512,
-//                             (void *) NULL,
-//                             (UBaseType_t) 2,
-//                             (TaskHandle_t *) &queuesend_Task3_Handle );
-	
-	vTaskStartScheduler();
-//while(1)
-//{
-//	
-//}
-	return 0;
-	
-  /**下面是通过直接操作库函数的方式实现IO控制**/	
-	
-//	while(1)
-//	{
-//	GPIO_ResetBits(GPIOF,GPIO_Pin_9);  //LED0对应引脚GPIOF.9拉低，亮  等同LED0=0;
-//	GPIO_SetBits(GPIOF,GPIO_Pin_10);   //LED1对应引脚GPIOF.10拉高，灭 等同LED1=1;
-//	delay_ms(500);  		   //延时300ms
-//	GPIO_SetBits(GPIOF,GPIO_Pin_9);	   //LED0对应引脚GPIOF.0拉高，灭  等同LED0=1;
-//	GPIO_ResetBits(GPIOF,GPIO_Pin_10); //LED1对应引脚GPIOF.10拉低，亮 等同LED1=0;
-//	delay_ms(500);                     //延时300ms
-//	}
+	 vTaskStartScheduler();
+	 return 0;
 }
 
 

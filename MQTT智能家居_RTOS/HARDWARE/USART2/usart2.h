@@ -9,8 +9,8 @@
 
 void USART2_Init(void);
 void UART4_Init(void);
-int Usart_SendByte(USART_TypeDef* pUSARTx, char ch ,int timeout);
-int Usart_SendString(USART_TypeDef* pUSARTx, char* str,int timeout);
+void Usart_SendByte(USART_TypeDef* pUSARTx, char ch);
+int Usart_SendString(USART_TypeDef* pUSARTx, const char* str);
 char* Usart_ReadBuffer(char* pBuffer);
 #endif
 

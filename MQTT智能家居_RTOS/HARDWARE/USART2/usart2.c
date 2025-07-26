@@ -34,7 +34,7 @@ void USART2_Init(void)
 	USART_ITConfig(USART2,USART_IT_RXNE,ENABLE);
 	
 	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 2;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 14;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	
 	NVIC_Init(&NVIC_InitStructure);//中断初始化
@@ -77,38 +77,50 @@ void UART4_Init(void)
 	USART_ITConfig(UART4,USART_IT_RXNE,ENABLE);
 	
 	NVIC_InitStructure.NVIC_IRQChannel = UART4_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 15;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	
 	NVIC_Init(&NVIC_InitStructure);//中断初始化
 	#endif
 }
 
+//重定义fputc函数 
+int fputc(int ch, FILE *f)
+{ 	
+	while((USART2->SR&0X40)==0);//循环发送,直到发送完毕   
+	USART2->DR = (u8) ch;      
+	return ch;
+}
 
-int Usart_SendByte(USART_TypeDef* pUSARTx, char ch ,int timeout)
+/*
+ *参数1：要使用的串口指针 
+ *参数2：要发送的字符
+ *函数作用：指定串口发送一个字节数据
+*/
+void Usart_SendByte(USART_TypeDef* pUSARTx, char ch)
 {
-	int T_count = 0;
 	USART_SendData(pUSARTx,ch);
 	while(USART_GetFlagStatus(pUSARTx,USART_FLAG_TXE)!=SET)
 	{
-		T_count++;
-		if(T_count>=timeout)return T_count;
 	}
-	return T_count;
 }
 
-int Usart_SendString(USART_TypeDef* pUSARTx, char* str,int timeout)
+/*
+ *参数1：要使用的串口指针 
+ *参数2：要发送的字符串
+ *函数作用：指定串口发送字符串
+*/
+int Usart_SendString(USART_TypeDef* pUSARTx, const char* str)
 {
-	int res;
 	unsigned int str_count = 0;
+	if(str == NULL)return FALSE;
 	while(str[str_count]!='\0')
 	{
-		res += Usart_SendByte(pUSARTx,str[str_count],timeout);
-		str_count++;
-		if(res>=timeout) return TIMEOUT;
+		Usart_SendByte(pUSARTx,str[str_count++]);
 	}
-	return OK;
+	return TRUE;
 }
+
 
 void USART2_IRQHandler(void)
 {
@@ -142,7 +154,6 @@ void USART2_IRQHandler(void)
 void UART4_IRQHandler(void)
 {
 	char res;
-	static char last_char;
 	static BaseType_t xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
 //	static int BufferCount = 0;
@@ -150,13 +161,13 @@ void UART4_IRQHandler(void)
 	{
 		res = USART_ReceiveData(UART4);//(USART2->DR);	//读取接收到的数据，读取USART数据寄存器（USART_DR或通过USART_ReceiveData()函数），硬件会自动清除接收中断标志位（RXNE）
 		RingBuffer_WriteByte(&test_RingBuffer,res);
-		if((res == '\n')&&(last_char == '\r'))
-		{
-			xSemaphoreGiveFromISR(Esp8266_ParseHandler,&xHigherPriorityTaskWoken);
-		}
-		last_char = res;
-     }
+		xSemaphoreGiveFromISR(Esp8266_ParseHandler,&xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+  }
 }
+
+
+
 
 
 //int fputc(int ch, FILE *f)
