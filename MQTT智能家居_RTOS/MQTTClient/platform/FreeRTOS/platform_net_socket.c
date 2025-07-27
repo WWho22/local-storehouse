@@ -19,10 +19,12 @@ int platform_net_socket_connect(const char *host, const char *port, int proto)
     return 0;
 }
 
+#if 0
 int platform_net_socket_recv(int fd, void *buf, size_t len, int flags)
 {
     return 0;
 }
+#endif
 
 int platform_net_socket_recv_timeout(int fd, unsigned char *buf, int len, int timeout)
 {
@@ -30,10 +32,12 @@ int platform_net_socket_recv_timeout(int fd, unsigned char *buf, int len, int ti
     return  0 ;
 }
 
+#if 0
 int platform_net_socket_write(int fd, void *buf, size_t len)
 {
     return 0;
 }
+#endif
 
 int platform_net_socket_write_timeout(int fd, unsigned char *buf, int len, int timeout)
 {
@@ -46,6 +50,7 @@ int platform_net_socket_close(int fd)
     return 0;
 }
 
+#if 0
 int platform_net_socket_set_block(int fd)
 {
     return 0;
@@ -60,4 +65,4 @@ int platform_net_socket_setsockopt(int fd, int level, int optname, const void *o
 {
     return 0;
 }
-
+#endif

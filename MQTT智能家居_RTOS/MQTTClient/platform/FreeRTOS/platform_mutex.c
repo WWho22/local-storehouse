@@ -21,9 +21,8 @@ int platform_mutex_lock(platform_mutex_t* m)
 
 int platform_mutex_lock_timeout(platform_mutex_t* m,int timeout)
 {
-	if(m->mutex == NULL) return -1;
-	else
-    return xSemaphoreTake(m->mutex, timeout);
+    return xSemaphoreTake(m->mutex, pdMS_TO_TICKS(timeout));
+	
 }
 
 int platform_mutex_trylock(platform_mutex_t* m)
@@ -42,10 +41,5 @@ int platform_mutex_destroy(platform_mutex_t* m)
     return 0;
 }
 
-void UART4_Lock_Init(platform_mutex_t platform_mutex_handler)
-{
-	 platform_mutex_init(&platform_mutex_handler);
-	 platform_mutex_lock(&platform_mutex_handler);
-}
 
 

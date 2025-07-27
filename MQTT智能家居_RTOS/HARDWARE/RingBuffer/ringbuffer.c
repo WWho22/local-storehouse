@@ -17,7 +17,7 @@ void RingBuffer_Init(RingBuffer* pRingBuffer,char* ptr,int16_t len)
  *参数2 所填入的一个字节数据
  *函数作用：向环形缓冲区写入一个字节的数据，若环形缓冲区满，覆盖开头已有数据
  */
-void RingBuffer_WriteByte(RingBuffer* pRingBuffer,char ch)
+void RingBuffer_WriteByte(RingBuffer* pRingBuffer,unsigned char ch)
 {
 	int i = (pRingBuffer->write_index+1)%pRingBuffer->buffer_size;
 	if(i!=pRingBuffer->read_index)
@@ -34,7 +34,7 @@ void RingBuffer_WriteByte(RingBuffer* pRingBuffer,char ch)
  *参数2 缓冲区地址
  *函数作用：从环形缓冲区读出一个字节的数据，存储到给定的缓冲区中。若读取成功返回0，读取失败，返回-1
  */
-int RingBuffer_ReadByte(RingBuffer* pRingBuffer,char* pch)
+int RingBuffer_ReadByte(RingBuffer* pRingBuffer,unsigned char* pch)
 {
 	if(pRingBuffer->read_index == pRingBuffer->write_index)
 		return -1;

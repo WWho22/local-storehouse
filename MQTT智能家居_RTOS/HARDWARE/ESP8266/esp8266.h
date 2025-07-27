@@ -4,6 +4,7 @@
 #define URC_LENGTH 20
 #define Recv_Buf_LENGTH 64
 
+
 //ÃüÁîÖ´ÐÐ½á¹û
 #define TRUE       1
 #define FALSE      0
@@ -30,19 +31,24 @@ enum URC_Handle_Status
 enum AT_Read_Status
     {AT_Start_Status,AT_OK_Status,AT_ERROR_Status}; 
 		
+enum URC_Rec_Status
+    {Full_Rec,Missing_Rec};
+	
 	typedef struct 
 {
    char URC_Data_handled[URC_LENGTH];
+	 int URC_Data_handled_length;
 	 int Effective_word_len;
 	 int URC_len;
+	 enum URC_Rec_Status URC_Rec;
+	 
 }URC_handled;
-//struct at_urc
-//{
-//    const char *cmd_prefix;
-//    const char *cmd_suffix;
-////    void (*func)(struct at_client *client, const char *data, rt_size_t size);
-//};
-//typedef struct at_urc *at_urc_t;
+
+
+void URC_handler_Init(void);
+void UART4_Lock_Init(void);
+void UART4_Unlock(void);
+void Esp8266_Parse_Init(void);
 void SetATStatus(int status);
 int GetATStatus(void);
 int UART_AT_Send(const char *buf, int len, int timeout);
@@ -52,7 +58,9 @@ void AT_Receive_Char(char *c, TickType_t timeout);
 int UART_Receive_Line(char *buf, int* plen, int timeout);
 int UART_AT_Receive(char *buf, int len, int timeout);
 int AT_SendCmd(char *cmd, int timeout);
-int Get_URC_Obj(char* PaserBuf,int timeout);
+int Get_URC_Obj(char* PaserBuf,int timeout,int len);
+int Get_CIPSEND_Result(char* buf);
+int Get_URC_Result(char* buf);
 int Is_AT_Response(const char* response);
 void URC_handle(void);
 #endif

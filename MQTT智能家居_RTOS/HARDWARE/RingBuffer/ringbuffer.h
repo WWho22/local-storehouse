@@ -19,8 +19,8 @@ typedef struct
 
 
 void RingBuffer_Init(RingBuffer* pRingBuffer,char* ptr,int16_t len);
-void RingBuffer_WriteByte(RingBuffer* pRingBuffer,char ch);
-int RingBuffer_ReadByte(RingBuffer* pRingBuffer,char* pch);
+void RingBuffer_WriteByte(RingBuffer* pRingBuffer,unsigned char ch);
+int RingBuffer_ReadByte(RingBuffer* pRingBuffer,unsigned char* pch);
 
 
 #endif

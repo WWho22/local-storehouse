@@ -16,7 +16,7 @@ QueueHandle_t x1queuehandle;
 QueueHandle_t x2queuehandle;
 SemaphoreHandle_t mutexhandle;
 //FreeRtos的互斥量没有实现谁使用谁释放的功能，只能靠用户自己遵守这个特性
-platform_mutex_t UsartSend;
+
 SemaphoreHandle_t Esp8266_ParseHandler;
 SemaphoreHandle_t Esp8266_SendHandler;
 RingBuffer test_RingBuffer;
@@ -36,14 +36,14 @@ void prvHardware_Init(void)
 {
 //	RCC_DeInit();
 //	RCC_HSEConfig(RCC_HSE_ON);
-	LED_Init();		        //初始化LED端口
+//	LED_Init();		        //初始化LED端口
 	uart_init(115200);
 	KEY_Init();
 	USART2_Init();
 	UART4_Init();
 	RingBuffer_Init(&test_RingBuffer,Public_buffer,20);
 	RingBuffer_Init(&Uart4_RingBuffer,Uart4_buffer,20);
-	OLED_Init();
+//	OLED_Init();
 }	
 
 
@@ -54,8 +54,8 @@ int main(void)
 	delay_init(168);	
 	//初始化延时函数
    prvHardware_Init();
-	 UART4_Lock_Init(UsartSend);
-	 Esp8266_ParseHandler = xSemaphoreCreateBinary();
+	 UART4_Lock_Init();
+	 Esp8266_Parse_Init();
 	 Usart_SendString(USART2,"Initilize OK\r\n");
 //   Usart_SendString(UART4,"Initialize Finish");
 //   Usart_SendString(UART4,"AT+CWMODE=3\r\n",40000);

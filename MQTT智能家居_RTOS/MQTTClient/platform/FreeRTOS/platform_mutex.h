@@ -21,6 +21,6 @@ int platform_mutex_lock_timeout(platform_mutex_t* m,int timeout);
 int platform_mutex_trylock(platform_mutex_t* m);
 int platform_mutex_unlock(platform_mutex_t* m);
 int platform_mutex_destroy(platform_mutex_t* m);
-void UART4_Lock_Init(platform_mutex_t platform_mutex_handler);
+
 
 #endif

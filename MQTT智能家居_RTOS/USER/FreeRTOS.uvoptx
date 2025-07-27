@@ -157,127 +157,75 @@
           <Type>0</Type>
           <LineNumber>59</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134226170</Address>
+          <Address>134225596</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\USER\main.c</Filename>
+          <Filename>C:\Users\jyq20\Documents\GitHub\local-storehouse\MQTT鏅鸿兘瀹跺眳_RTOS\USER\main.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression>\\FreeRTOS\main.c\59</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>41</LineNumber>
+          <LineNumber>160</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134222604</Address>
+          <Address>134220068</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\HARDWARE\ESP8266\esp8266.c</Filename>
+          <Filename>C:\Users\jyq20\Documents\GitHub\local-storehouse\MQTT鏅鸿兘瀹跺眳_RTOS\TASK\test_task.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\FreeRTOS\../HARDWARE/ESP8266/esp8266.c\41</Expression>
+          <Expression>\\FreeRTOS\../TASK/test_task.c\160</Expression>
         </Bp>
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>24</LineNumber>
+          <LineNumber>166</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134226308</Address>
+          <Address>134220090</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\MQTTClient\platform\FreeRTOS\platform_mutex.c</Filename>
+          <Filename>C:\Users\jyq20\Documents\GitHub\local-storehouse\MQTT鏅鸿兘瀹跺眳_RTOS\TASK\test_task.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\FreeRTOS\../MQTTClient/platform/FreeRTOS/platform_mutex.c\24</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>54</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134222652</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\HARDWARE\ESP8266\esp8266.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\FreeRTOS\../HARDWARE/ESP8266/esp8266.c\54</Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>201</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134219960</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>D:\weweho_work\MQTT鏅鸿兘瀹跺眳_RTOS\TASK\test_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\FreeRTOS\../TASK/test_task.c\201</Expression>
+          <Expression>\\FreeRTOS\../TASK/test_task.c\166</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>((USART_TypeDef *) (((uint32_t)0x40000000) + 0x4400))</ItemText>
+          <ItemText>Uart4_buffer</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>test_RingBuffer</ItemText>
+          <ItemText>Uart4_RingBuffer</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>res</ItemText>
+          <ItemText>buf</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Public_buffer,0x10</ItemText>
+          <ItemText>str</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>Uart4_RingBuffer</ItemText>
-        </Ww>
-        <Ww>
-          <count>5</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>Uart4_buffer</ItemText>
-        </Ww>
-        <Ww>
-          <count>6</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>AT_LEN</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>UsartSend</ItemText>
-        </Ww>
-        <Ww>
-          <count>8</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ret</ItemText>
+          <ItemText>pRingBuffer</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
@@ -285,6 +233,16 @@
           <count>0</count>
           <WinNumber>2</WinNumber>
           <ItemText>m</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>paser_buf</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>paser_count</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>

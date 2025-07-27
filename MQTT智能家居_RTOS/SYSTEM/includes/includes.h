@@ -55,7 +55,7 @@
 
 #define USART4_REC_LEN 100
 
-
+//外部声明的变量
 extern u8 usart4_buffer[USART4_REC_LEN];
 extern u8 usart_test;
 extern TaskHandle_t queuesend_Task_Handle;
@@ -73,11 +73,9 @@ extern TaskHandle_t AT_Test_task_handle;
 extern SemaphoreHandle_t mutexhandle;
 extern RingBuffer test_RingBuffer;
 extern RingBuffer Uart4_RingBuffer;
-extern platform_mutex_t UsartSend;
 extern SemaphoreHandle_t Esp8266_ParseHandler;//Esp8266的回复处理信号量
 extern SemaphoreHandle_t Esp8266_SendHandler;//Esp8266的AT命令发送信号量
-extern int AT_LEN;
-//AT命令
+extern int AT_LEN;//AT命令
 
 extern enum URC_Handle_Status URC_Status;//服务器URC回复的处理状态
 extern enum write_status Write_Status;

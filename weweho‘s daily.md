@@ -249,6 +249,77 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 直接硬件错误中断卡死
 
-## 2025.07.25
+## 2025.07.26
 
-将AT_TestTask任务的优先级调整到与ESP8266_PalseTask相同，任务堆栈增加到2048字节后，任务可以运行了
+问题排查：
+
+- 将AT_TestTask任务的优先级调整到与ESP8266_PalseTask相同，任务堆栈增加到1024字节。
+
+- 将原本在主函数C文件定义的信号量结构体变量
+
+  ```c
+  static platform_mutex_t UsartSend
+  ```
+
+  放置到esp8266.c文件，也就是UART_AT_Send函数所定义的位置
+
+  ```c
+  int UART_AT_Send(const char *buf, int len, int timeout)
+      {
+  //	int PreT_count = 0,NowT_count = 0;
+  	int ret,err;
+  //	PreT_count = xTaskGetTickCount();
+  //	if(len<=0) return FALSE;
+  //	if((!Usart_SendString(UART4,buf))&&(!Usart_SendString(UART4,"\r\n"))) 
+  //	 {
+  //		 return FALSE;
+  //	 }
+  	 Usart_SendString(UART4,buf);
+  	 Usart_SendString(UART4,"\r\n");
+  	 ret = platform_mutex_lock_timeout(&UsartSend,timeout);
+  
+  //	NowT_count = xTaskGetTickCount();
+  //	if(pdMS_TO_TICKS(NowT_count - PreT_count) >= timeout)return TIMEOUT;
+  		if( ret == pdTRUE)
+  	{
+  		 err = GetATStatus();
+       return err;
+  	}
+  	else return TIMEOUT;
+  }
+  ```
+
+  此处使用到了UsartSend信号量结构体变量，将其定义为静态变量，然后便可正常进行任务调度。
+
+  串口打印的结果为正常收到信号量，但是AT命令的回复具体是不是OK还没看，需要在调试中查看环形缓冲区的数据
+
+## 2025.07.27
+
+今日目标：
+
+使用已写好的AT命令编写MQTT的socket网络函数
+
+- platform_net_socket_recv_timeout
+- platform_net_socket_write_timeout
+- platform_net_socket_connect
+- platform_net_socket_close
+
+问题排查：
+
+环形缓冲区的数据接收存在问题，每接收一个字符就会有一个间隔，因此无法进入字符串处理函数。
+
+![image-20250727213706709](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727213706709.png)
+
+![image-20250727213849152](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727213849152.png)
+
+正常接收情况应该是这样：
+
+![image-20250727214011257](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727214011257.png)
+
+昨天可以正常接收，但是今天出了问题，费解
+
+搜了一下貌似是这种情况：
+
+最根本的原因是，您的**微控制器（MCU）的接收逻辑被配置为按16位（半字/half-word）单位来读取数据，但却将这些数据存入了一个8位（字节/byte）的数组中**。
+
+![image-20250727223719877](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727223719877.png)

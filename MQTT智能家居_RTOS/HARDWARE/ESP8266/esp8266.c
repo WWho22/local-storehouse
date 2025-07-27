@@ -13,8 +13,31 @@
 
 enum URC_Handle_Status URC_Status;//服务器URC回复的处理状态
 URC_handled* Cur_URC;
+static platform_mutex_t UsartSend;
 static uint8_t recv_buf[Recv_Buf_LENGTH];
 static int g_at_status;
+static char* g_cur_cmd;
+
+void URC_handler_Init(void)
+{
+	Cur_URC -> URC_Data_handled_length = URC_LENGTH;
+}
+
+void UART4_Lock_Init(void)
+{
+	 platform_mutex_init(&UsartSend);
+	 platform_mutex_lock(&UsartSend);
+}
+
+void Esp8266_Parse_Init(void)
+{
+	Esp8266_ParseHandler = xSemaphoreCreateBinary();
+}
+
+void UART4_Unlock(void)
+{
+	platform_mutex_unlock(&UsartSend);
+}
 
 void SetATStatus(int status)
 {
@@ -37,11 +60,14 @@ int UART_AT_Send(const char *buf, int len, int timeout)
 //	int PreT_count = 0,NowT_count = 0;
 	int ret,err;
 //	PreT_count = xTaskGetTickCount();
-	if(len<=0) return FALSE;
-	if((!Usart_SendString(UART4,buf))&&(!Usart_SendString(UART4,"\r\n"))) 
-	 {
-		 return FALSE;
-	 }
+//	if(len<=0) return FALSE;
+//	if((!Usart_SendString(UART4,buf))&&(!Usart_SendString(UART4,"\r\n"))) 
+//	 {
+//		 return FALSE;
+//	 }
+	 Usart_SendString(UART4,buf);
+	 Usart_SendString(UART4,"\r\n");
+//	 g_cur_cmd = buf;
 	 ret = platform_mutex_lock_timeout(&UsartSend,timeout);
 
 //	NowT_count = xTaskGetTickCount();
@@ -108,8 +134,12 @@ int UART_AT_SERVER_CONNECT_Send(const char *buf,char* SAddr ,char* Port,int time
 
 void AT_Receive_Char(char *c, TickType_t timeout)
 {
+	if(RingBuffer_ReadByte(&test_RingBuffer,(unsigned char*)c) == 0)
+		return;
+	else
+	{
 	xSemaphoreTake(Esp8266_ParseHandler,timeout);
-	RingBuffer_ReadByte(&test_RingBuffer,c);
+	}
 }
 
 /*
@@ -125,46 +155,31 @@ void AT_Receive_Char(char *c, TickType_t timeout)
 //		}
 //		last_char = res;
 //     }
-int UART_Receive_Line(char *buf, int* plen, int timeout)
-{
-	int Rec_count = 0,len_count = 0,T_count = 0;
-	char res;
-	 do
-	{
-		switch(RingBuffer_ReadByte(&test_RingBuffer,&res))
-		{
-			case Rec_SUCCESS:
-			if((res!='\r')&&(res!='\n'))//环形缓冲区中接收的字符串数据通常以\r\n结尾
-		   {
-		     buf[Rec_count++] = res;
-		     len_count++;
-		   }
-			case Rec_FAIL:
-				return ERROR;
-		}
-		T_count++;
-		if(T_count>=timeout) return TIMEOUT;
-	}while(res!='\n');
-	*plen = len_count;
-	return TRUE;
-}
-//
-int IS_RecOK(char* buf,int len)
-{
-	buf[len] = '\0';
-	return (strstr(buf,"OK"))?TRUE:FALSE;
-}
-
-int IS_RecERROR(char* buf,int len)
-{
-	buf[len] = '\0';
-	return (strstr(buf,"ERROR"))?TRUE:FALSE;
-}
-
-
+//int UART_Receive_Line(char *buf, int* plen, int timeout)
+//{
+//	int Rec_count = 0,len_count = 0,T_count = 0;
+//	char res;
+//	 do
+//	{
+//		switch(RingBuffer_ReadByte(&test_RingBuffer,&res))
+//		{
+//			case Rec_SUCCESS:
+//			if((res!='\r')&&(res!='\n'))//环形缓冲区中接收的字符串数据通常以\r\n结尾
+//		   {
+//		     buf[Rec_count++] = res;
+//		     len_count++;
+//		   }
+//			case Rec_FAIL:
+//				return ERROR;
+//		}
+//		T_count++;
+//		if(T_count>=timeout) return TIMEOUT;
+//	}while(res!='\n');
+//	*plen = len_count;
+//	return TRUE;
+//}
 /*
  *参数1：用于存储字符串的缓冲区首地址 
- *参数2
  *函数作用：判断是否为AT命令的回复
 */
 int Is_AT_Response(const char* response)
@@ -191,6 +206,29 @@ int Is_AT_Response(const char* response)
 		}
 		return TRUE;
 }
+
+/*
+ *参数1：用于存储字符串的缓冲区首地址 
+ *函数作用：判断是否为AT发送命令的回复
+*/
+int Get_CIPSEND_Result(char* buf)
+{
+	if(g_cur_cmd&&(strstr(g_cur_cmd,"AT+CIPSEND="))&&(buf[0] == '>'))
+		return TRUE;
+	else return FALSE;
+}
+
+/*
+ *参数1：用于存储字符串的缓冲区首地址 
+ *函数作用：判断是否为AT命令的回复
+*/
+int Get_URC_Result(char* buf)
+{
+	if(strstr(buf,"+IPD,"))
+		return TRUE;
+	else return FALSE;
+}
+
 /*
  *参数1：AT命令字符串
  *参数2：超时时间
@@ -206,14 +244,16 @@ int AT_SendCmd(char *cmd, int timeout)
 /*
  *参数1：处理缓冲区结构体地址
  *参数2：超时时间
+ *参数3：收到的字符串长度（引入该参数是因为某些命令的回复长短不一，前一刻太长的字符串没有完全被后一刻的清空）
  *返回值：1表示为服务器发出的消息，0表示AT命令回复
  *函数作用：判断是否为服务器传递信息：+IPD,2:AB
 */
 	/* 数据格式: +IPD,2:ab */
-int Get_URC_Obj(char* PaserBuf,int timeout)
+int Get_URC_Obj(char* PaserBuf,int timeout,int len)
 {
 	enum URC_Read_Status AT_Status = URC_Init_Status;
-	int i = 0,len = strlen(PaserBuf),PreT_count,NowT_count,Cur_Len_Pos,m;
+	int i = 0,PreT_count,NowT_count,Cur_Len_Pos,m;
+	URC_handler_Init();
 	if(len<=0) return URC_FALSE;
 	PreT_count = xTaskGetTickCount();
 	while(AT_Status != UnURC_Status)
@@ -221,7 +261,7 @@ int Get_URC_Obj(char* PaserBuf,int timeout)
 		switch(AT_Status)
 		{
 			case URC_Init_Status:
-				if(i<Recv_Buf_LENGTH)
+				if((i<Recv_Buf_LENGTH)&&(i<len))
 				{
 					recv_buf[i] = PaserBuf[i];
 					recv_buf[i+1] = '\0';
@@ -261,13 +301,23 @@ int Get_URC_Obj(char* PaserBuf,int timeout)
 				break;
 			
 			case URC_Data_Status:
-				if((i<Cur_URC->URC_len)&&(m<Cur_URC->URC_len))
+				//这里应该补充是否完整接收到数据，如果URC处理结构体的数组长度小于Effective_word_len，则接收缺失
+			  //这里的判断条件是因为存入处理数组既要满足不超过处理数组的最大长度，
+			  //也要满足接收所能容纳的URC的最大长度，并且i也不能超过接收缓冲区的最大长度
+				if((m<Cur_URC->URC_Data_handled_length)&&(i<Recv_Buf_LENGTH)&&(m<Cur_URC->URC_len))
 				{
 					Cur_URC->URC_Data_handled[m] =  PaserBuf[i];
 					m++;
 					i++;
 				}				
-				else AT_Status = URC_Complete_Status;
+				else
+				{					
+					AT_Status = URC_Complete_Status;
+				  if(m == (Cur_URC->URC_len-1))
+						Cur_URC ->URC_Rec = Full_Rec;
+					else 
+						Cur_URC->URC_Rec = Missing_Rec;
+				}
 				break;
 				
 			default:
