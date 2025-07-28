@@ -5,7 +5,7 @@
 #include "stdio.h"
 
 #define EN_UART4_R_IT    1  //使能（1）/禁止（0）串口1接收
-#define EN_USART2_R_IT    1  //使能（1）/禁止（0）串口1接收
+#define EN_USART2_R_IT    0  //使能（1）/禁止（0）串口1接收
 
 void USART2_Init(void);
 void UART4_Init(void);

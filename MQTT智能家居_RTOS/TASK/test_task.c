@@ -136,8 +136,9 @@ void ESP8266_PalseTask(void* arg)
 					 Paser_Status = Uncomplete_Status;
 				 }
 				//获取数据处理二值信号量,读取环形缓冲区的一个字节
-			 AT_Receive_Char(&paser_buf[paser_count],portMAX_DELAY);
-
+			  
+				if(AT_Receive_Char(&(paser_buf[paser_count]),portMAX_DELAY))
+				{
 				//获取成功则读取环形缓冲区数据，知道读到\r\n
 			 if(paser_count&&(paser_buf[paser_count-1] == '\r')&&(paser_buf[paser_count] == '\n'))
 			 {
@@ -174,6 +175,7 @@ void ESP8266_PalseTask(void* arg)
 			 {
 			  paser_count++;
 			 }
+		 }
 	}
 }
 
@@ -209,7 +211,7 @@ void AT_TestTask(void* arg)
 	int ret = 0;
 	while(1)
 	{
-		ret = UART_AT_Send("AT",strlen(AT_Test),2000);
+		ret = UART_AT_Send("AT",strlen(AT_Test),1000);
 		printf("ret is %d\r\n",ret);
 	}
 }

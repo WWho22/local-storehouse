@@ -54,7 +54,7 @@ int GetATStatus(void);
 int UART_AT_Send(const char *buf, int len, int timeout);
 int UART_AT_WIFI_CONNECT_Send(const char *buf,char* SSID,char* password,int timeout);
 int UART_AT_SERVER_CONNECT_Send(const char *buf,char* SAddr ,char* Port,int timeout);
-void AT_Receive_Char(char *c, TickType_t timeout);
+int AT_Receive_Char(char *c, TickType_t timeout);
 int UART_Receive_Line(char *buf, int* plen, int timeout);
 int UART_AT_Receive(char *buf, int len, int timeout);
 int AT_SendCmd(char *cmd, int timeout);

@@ -131,14 +131,14 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
-F (.\main.c)(0x68859B3F)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x688729CF)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
 I (..\USER\stm32f4xx.h)(0x686F1BDA)
@@ -197,14 +197,14 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
-F (..\HARDWARE\USART2\usart2.c)(0x68846913)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\usart2.o --omf_browse ..\obj\usart2.crf --depend ..\obj\usart2.d)
+F (..\HARDWARE\USART2\usart2.c)(0x68871E06)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\usart2.o --omf_browse ..\obj\usart2.crf --depend ..\obj\usart2.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
 I (..\USER\stm32f4xx.h)(0x686F1BDA)
@@ -263,12 +263,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\HARDWARE\OLED\oled.h)(0x686F1BDA)()
 F (..\HARDWARE\GPIO\gpio.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\gpio.o --omf_browse ..\obj\gpio.crf --depend ..\obj\gpio.d)
@@ -330,12 +330,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)()
 F (..\HARDWARE\DHT11\dht11.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\dht11.o --omf_browse ..\obj\dht11.crf --depend ..\obj\dht11.d)
@@ -397,15 +397,15 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)()
-F (..\HARDWARE\ESP8266\esp8266.c)(0x68863584)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\esp8266.o --omf_browse ..\obj\esp8266.crf --depend ..\obj\esp8266.d)
+F (..\HARDWARE\ESP8266\esp8266.c)(0x688730B0)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\esp8266.o --omf_browse ..\obj\esp8266.crf --depend ..\obj\esp8266.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
 I (..\USER\stm32f4xx.h)(0x686F1BDA)
@@ -464,15 +464,15 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
-F (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)()
-F (..\HARDWARE\RingBuffer\ringbuffer.c)(0x68863542)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\ringbuffer.o --omf_browse ..\obj\ringbuffer.crf --depend ..\obj\ringbuffer.d)
+F (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)()
+F (..\HARDWARE\RingBuffer\ringbuffer.c)(0x68872A10)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\ringbuffer.o --omf_browse ..\obj\ringbuffer.crf --depend ..\obj\ringbuffer.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
 I (..\USER\stm32f4xx.h)(0x686F1BDA)
@@ -531,14 +531,14 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
-F (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)()
+F (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)()
 F (..\HARDWARE\OLED\oled.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\oled.o --omf_browse ..\obj\oled.crf --depend ..\obj\oled.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
@@ -598,12 +598,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\SYSTEM\delay\delay.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x686F1BDA)
@@ -664,12 +664,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\SYSTEM\sys\sys.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
@@ -766,12 +766,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\CORE\startup_stm32f40_41xxx.s)(0x686F1BDA)(--cpu Cortex-M4.fp -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 524" --pd "STM32F40_41xxx SETA 1"--list ..\obj\startup_stm32f40_41xxx.lst --xref -o ..\obj\startup_stm32f40_41xxx.o --depend ..\obj\startup_stm32f40_41xxx.d)
 F (..\FWLIB\src\misc.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\misc.o --omf_browse ..\obj\misc.crf --depend ..\obj\misc.d)
@@ -1688,12 +1688,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\TASK\queue_receive.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\queue_receive.o --omf_browse ..\obj\queue_receive.crf --depend ..\obj\queue_receive.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
@@ -1754,14 +1754,14 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
-F (..\TASK\test_task.c)(0x688627AE)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\test_task.o --omf_browse ..\obj\test_task.crf --depend ..\obj\test_task.d)
+F (..\TASK\test_task.c)(0x688730C7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\test_task.o --omf_browse ..\obj\test_task.crf --depend ..\obj\test_task.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
 I (..\SYSTEM\sys\sys.h)(0x686F1BDA)
 I (..\USER\stm32f4xx.h)(0x686F1BDA)
@@ -1820,12 +1820,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\TASK\data_handle.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\data_handle.o --omf_browse ..\obj\data_handle.crf --depend ..\obj\data_handle.d)
 I (..\SYSTEM\includes\includes.h)(0x68859AE0)
@@ -1886,12 +1886,12 @@ I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (D:\Keil_v5\ARM\ARMCC\include\ctype.h)(0x588B8344)
 I (..\HARDWARE\LED\led.h)(0x686F1BDA)
-I (..\HARDWARE\USART2\usart2.h)(0x68763388)
+I (..\HARDWARE\USART2\usart2.h)(0x68871BC1)
 I (..\HARDWARE\GPIO\gpio.h)(0x686F1BDA)
 I (..\HARDWARE\DHT11\dht11.h)(0x686F1BDA)
 I (..\HARDWARE\OLED\oled.h)(0x686F1BDA)
-I (..\HARDWARE\ESP8266\esp8266.h)(0x688619D3)
-I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6886353B)
+I (..\HARDWARE\ESP8266\esp8266.h)(0x6887309F)
+I (..\HARDWARE\RingBuffer\ringbuffer.h)(0x6887299D)
 I (..\MQTTClient\platform\FreeRTOS\platform_mutex.h)(0x68849921)
 F (..\MQTTClient\common\mqtt_list.c)(0x686F1BDA)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\HARDWARE\LED -I ..\FWLIB\inc -I ..\HARDWARE\USART2 -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\SYSTEM\includes -I ..\MQTTClient\common -I ..\MQTTClient\mqtt -I ..\MQTTClient\mqttclient -I ..\MQTTClient\network -I ..\MQTTClient\platform\FreeRTOS -I ..\MQTTClient\network\mbedtls\include\mbedtls -I ..\MQTTClient\common\log -I ..\MQTTClient\common\PLOOC -I ..\HARDWARE\OLED -I ..\HARDWARE\GPIO -I ..\HARDWARE\DHT11 -I ..\HARDWARE\ESP8266 -I ..\HARDWARE\RingBuffer --c99-I.\RTE\_FreeRTOS-ID:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-ID:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F40_41xxx -DSTM32F40_41xxx -DUSE_STDPERIPH_DRIVER-o ..\obj\mqtt_list.o --omf_browse ..\obj\mqtt_list.crf --depend ..\obj\mqtt_list.d)
 I (..\MQTTClient\common\mqtt_list.h)(0x686F1BDA)

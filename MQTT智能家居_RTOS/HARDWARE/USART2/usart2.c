@@ -59,7 +59,7 @@ void UART4_Init(void)
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStructure.GPIO_Pin= GPIO_Pin_10|GPIO_Pin_11;
 	GPIO_InitStructure.GPIO_PuPd= GPIO_PuPd_UP;
-	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_100MHz;
 	
 	USART4_InitStructure.USART_BaudRate = 115200;
 	USART4_InitStructure.USART_HardwareFlowControl= USART_HardwareFlowControl_None;
@@ -77,7 +77,7 @@ void UART4_Init(void)
 	USART_ITConfig(UART4,USART_IT_RXNE,ENABLE);
 	
 	NVIC_InitStructure.NVIC_IRQChannel = UART4_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 15;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 14;
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;	
 	NVIC_Init(&NVIC_InitStructure);//中断初始化
@@ -124,30 +124,11 @@ int Usart_SendString(USART_TypeDef* pUSARTx, const char* str)
 
 void USART2_IRQHandler(void)
 {
-	char res;
-//	static int BufferCount = 0;
+	unsigned char res;
 	if(USART_GetITStatus(USART2,USART_IT_RXNE)!= RESET)
 	{
-		res = USART_ReceiveData(USART2);//(USART2->DR);	//读取接收到的数据，读取USART数据寄存器（USART_DR或通过USART_ReceiveData()函数），硬件会自动清除接收中断标志位（RXNE）
-		RingBuffer_WriteByte(&test_RingBuffer,res);
-//		USART_SendData(USART2,res);
-//		if(BufferCount<=(USART4_REC_LEN-1))
-//		{
-//			if(res!='\0')
-//			{
-//				usart4_buffer[BufferCount] = res;
-//				BufferCount++;
-//			}
-//			else 
-//			{
-//				usart4_buffer[BufferCount] = res;
-//				BufferCount = 0;
-//			}
-//		}
-//		else
-//		{
-//			BufferCount = 0;
-//		}
+//		res = (unsigned char)USART_ReceiveData(USART2);//(USART2->DR);	//读取接收到的数据，读取USART数据寄存器（USART_DR或通过USART_ReceiveData()函数），硬件会自动清除接收中断标志位（RXNE）
+//		RingBuffer_WriteByte(&test_RingBuffer,res);
 	}
 }
 
@@ -156,7 +137,6 @@ void UART4_IRQHandler(void)
 	char res;
 	static BaseType_t xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
-//	static int BufferCount = 0;
 	if(USART_GetITStatus(UART4,USART_IT_RXNE)!= RESET)
 	{
 		res = USART_ReceiveData(UART4);//(USART2->DR);	//读取接收到的数据，读取USART数据寄存器（USART_DR或通过USART_ReceiveData()函数），硬件会自动清除接收中断标志位（RXNE）

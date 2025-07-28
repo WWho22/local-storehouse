@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\FreeRTOS.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\FreeRTOS.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun Jul 27 22:19:59 2025
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Mon Jul 28 16:13:00 2025
 <BR><P>
 <H3>Maximum Stack Usage =        320 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -571,7 +571,7 @@ Global Symbols
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[79]"></a>AT_Receive_Char</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, esp8266.o(i.AT_Receive_Char))
+<P><STRONG><a name="[79]"></a>AT_Receive_Char</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, esp8266.o(i.AT_Receive_Char))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = AT_Receive_Char &rArr; xQueueGenericReceive &rArr; prvUnlockQueue &rArr; prvNotifyQueueSetContainer &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
@@ -595,7 +595,7 @@ Global Symbols
 <P><STRONG><a name="[7]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40_41xxx.o(RESET)
 </UL>
-<P><STRONG><a name="[62]"></a>ESP8266_PalseTask</STRONG> (Thumb, 136 bytes, Stack size 16 bytes, test_task.o(i.ESP8266_PalseTask))
+<P><STRONG><a name="[62]"></a>ESP8266_PalseTask</STRONG> (Thumb, 140 bytes, Stack size 16 bytes, test_task.o(i.ESP8266_PalseTask))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = ESP8266_PalseTask &rArr; UART4_Unlock &rArr; platform_mutex_unlock &rArr; xQueueGenericSend &rArr; prvUnlockQueue &rArr; prvNotifyQueueSetContainer &rArr; prvCopyDataToQueue &rArr; xTaskPriorityDisinherit &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_Unlock
@@ -687,7 +687,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = NVIC_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_Init
 </UL>
 
@@ -717,21 +716,22 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
 </UL>
 
-<P><STRONG><a name="[cb]"></a>RingBuffer_Init</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, ringbuffer.o(i.RingBuffer_Init))
+<P><STRONG><a name="[cb]"></a>RingBuffer_Init</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, ringbuffer.o(i.RingBuffer_Init))
 <BR><BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvHardware_Init
 </UL>
 
-<P><STRONG><a name="[7a]"></a>RingBuffer_ReadByte</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, ringbuffer.o(i.RingBuffer_ReadByte))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = RingBuffer_ReadByte
+<P><STRONG><a name="[7a]"></a>RingBuffer_ReadByte</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, ringbuffer.o(i.RingBuffer_ReadByte))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = RingBuffer_ReadByte &rArr; __2printf
+</UL>
+<BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;AT_Receive_Char
 </UL>
 
-<P><STRONG><a name="[93]"></a>RingBuffer_WriteByte</STRONG> (Thumb, 46 bytes, Stack size 12 bytes, ringbuffer.o(i.RingBuffer_WriteByte))
+<P><STRONG><a name="[93]"></a>RingBuffer_WriteByte</STRONG> (Thumb, 52 bytes, Stack size 12 bytes, ringbuffer.o(i.RingBuffer_WriteByte))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = RingBuffer_WriteByte
 </UL>
-<BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
-<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_IRQHandler
 </UL>
 
 <P><STRONG><a name="[83]"></a>SetATStatus</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, esp8266.o(i.SetATStatus))
@@ -821,23 +821,19 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40_41xxx.o(RESET)
 </UL>
-<P><STRONG><a name="[30]"></a>USART2_IRQHandler</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, usart2.o(i.USART2_IRQHandler))
+<P><STRONG><a name="[30]"></a>USART2_IRQHandler</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, usart2.o(i.USART2_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART2_IRQHandler &rArr; USART_GetITStatus
 </UL>
-<BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
-<LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
-<LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RingBuffer_WriteByte
+<BR>[Calls]<UL><LI><a href="#[91]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f40_41xxx.o(RESET)
 </UL>
-<P><STRONG><a name="[a3]"></a>USART2_Init</STRONG> (Thumb, 170 bytes, Stack size 32 bytes, usart2.o(i.USART2_Init))
+<P><STRONG><a name="[a3]"></a>USART2_Init</STRONG> (Thumb, 128 bytes, Stack size 32 bytes, usart2.o(i.USART2_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = USART2_Init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
-<LI><a href="#[9a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ITConfig
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Cmd
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphClockCmd
-<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_Init
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinAFConfig
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_AHB1PeriphClockCmd
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
@@ -867,7 +863,6 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = USART_ITConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_Init
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_Init
 </UL>
 
@@ -882,8 +877,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[92]"></a>USART_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_usart.o(i.USART_ReceiveData))
-<BR><BR>[Called By]<UL><LI><a href="#[30]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
-<LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_IRQHandler
 <LI><a href="#[2f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
 </UL>
 
@@ -923,6 +917,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericReceive
 <LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
+<LI><a href="#[7a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RingBuffer_ReadByte
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGiveFromISR
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prvInitialiseNewTask
@@ -1023,7 +1018,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART4_Unlock
 </UL>
 
-<P><STRONG><a name="[b2]"></a>prvHardware_Init</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, main.o(i.prvHardware_Init))
+<P><STRONG><a name="[b2]"></a>prvHardware_Init</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, main.o(i.prvHardware_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 116<LI>Call Chain = prvHardware_Init &rArr; uart_init &rArr; USART_Init &rArr; RCC_GetClocksFreq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init

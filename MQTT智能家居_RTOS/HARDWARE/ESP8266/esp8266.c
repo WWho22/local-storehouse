@@ -65,7 +65,7 @@ int UART_AT_Send(const char *buf, int len, int timeout)
 //	 {
 //		 return FALSE;
 //	 }
-	 Usart_SendString(UART4,buf);
+   Usart_SendString(UART4,buf);
 	 Usart_SendString(UART4,"\r\n");
 //	 g_cur_cmd = buf;
 	 ret = platform_mutex_lock_timeout(&UsartSend,timeout);
@@ -132,13 +132,14 @@ int UART_AT_SERVER_CONNECT_Send(const char *buf,char* SAddr ,char* Port,int time
  *函数作用：接收环形缓冲区的一个字符数据
 */
 
-void AT_Receive_Char(char *c, TickType_t timeout)
+int AT_Receive_Char(char *c, TickType_t timeout)
 {
-	if(RingBuffer_ReadByte(&test_RingBuffer,(unsigned char*)c) == 0)
-		return;
+	if(RingBuffer_ReadByte(&test_RingBuffer,(unsigned char *)c) == 0)
+		return 1;
 	else
 	{
 	xSemaphoreTake(Esp8266_ParseHandler,timeout);
+		return 0;
 	}
 }
 

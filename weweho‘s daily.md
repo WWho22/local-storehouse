@@ -322,4 +322,38 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 最根本的原因是，您的**微控制器（MCU）的接收逻辑被配置为按16位（半字/half-word）单位来读取数据，但却将这些数据存入了一个8位（字节/byte）的数组中**。
 
-![image-20250727223719877](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727223719877.png)
+让我们以字符 'A' 为例来解释这个过程：
+
+1. 蓝牙模块通过UART发送了字符 'A'，它的ASCII码是 0x41 (一个8位的字节)。
+2. MCU的UART外设接收到这个8位的字节 0x41。
+3. 由于配置错误，DMA控制器或者CPU被指令从UART的数据寄存器（Data Register, DR）中读取一个**16位**的数据。此时，硬件会将这个8位的 0x41 扩展成一个16位的值，通常是 0x0041。
+4. DMA或CPU现在需要将这个16位的值 0x0041 存入您定义的8位 char 类型的数组 paser_buf 中。
+5. 在存储时，这个16位的数据被拆分成两个8位的字节。根据您的系统是小端模式（Little-Endian）还是大端模式（Big-Endian），存储顺序会不同。从您的截图 [0x00, 0x41] 来看，系统将低地址存低位字节，高地址存高位字节，这符合小端模式的特征（*注：也可能是硬件读取和放置的自然结果*）。
+   - 
+   - 第一个字节 0x00 被写入 paser_buf[i]。
+   - 第二个字节 0x41 ('A') 被写入 paser_buf[i+1]。
+
+这个过程对每个接收到的字符都重复一遍，就导致了您看到的每个有效字符前面都插入了一个 \0 的现象。
+
+## 2025.07.28
+
+07.26的代码可以正常接收字符，但是乱序了
+
+![image-20250728113519252](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728113519252.png)
+
+更老的代码也有问题
+
+![image-20250728115517388](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728115517388.png)
+
+目前代码中，环形缓冲区的数据是这样的
+
+![image-20250728150406126](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150406126.png)
+
+但是处理缓冲区读取的数据是这样的
+
+![image-20250728150429115](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150429115.png)
+
+并且串口打印出来的数据貌似也没有问题
+
+![image-20250728150521601](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150521601.png)
+
