@@ -308,13 +308,13 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 环形缓冲区的数据接收存在问题，每接收一个字符就会有一个间隔，因此无法进入字符串处理函数。
 
-![image-20250727213706709](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727213706709.png)
+![image-20250727213706709](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250727213706709.png)
 
 ![image-20250727213849152](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727213849152.png)
 
 正常接收情况应该是这样：
 
-![image-20250727214011257](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250727214011257.png)
+![image-20250727214011257](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250727214011257.png)
 
 昨天可以正常接收，但是今天出了问题，费解
 
@@ -339,39 +339,39 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 07.26的代码可以正常接收字符，但是乱序了
 
-![image-20250728113519252](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728113519252.png)
+![image-20250728113519252](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728113519252.png)
 
 更老的代码也有问题
 
-![image-20250728115517388](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728115517388.png)
+![image-20250728115517388](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728115517388.png)
 
 目前代码中，环形缓冲区的数据是这样的
 
-![image-20250728150406126](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150406126.png)
+![image-20250728150406126](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728150406126.png)
 
 但是处理缓冲区读取的数据是这样的
 
-![image-20250728150429115](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150429115.png)
+![image-20250728150429115](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728150429115.png)
 
 并且串口打印出来的数据貌似也没有问题
 
-![image-20250728150521601](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150521601.png)
+![image-20250728150521601](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728150521601.png)
 
 问题发现：
 
 之前AT_Receive_Char(&(paser_buf[paser_count]),portMAX_DELAY)单纯只用来接收数据，但是无论有没有接收到数据，paser_count都会加1。而paser_buf[]初始化后，内部数组单元的值都为0x00，因此可以判断为在环形缓冲区没有收到新数据时，paser都会加1，导致paser_buf[paser_count]会出现间隔有0x00的问题。
 
-![image-20250728170126032](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728170126032.png)
+![image-20250728170126032](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728170126032.png)
 
 问题解决：
 
-![image-20250728170010627](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728170010627.png)
+![image-20250728170010627](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250728170010627.png)
 
 新问题：
 
 ![image-20250729150224556](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250729150224556.png)
 
-![image-20250729150201611](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250729150201611.png)
+![image-20250729150201611](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250729150201611.png)
 
 
 
@@ -383,9 +383,13 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 使用已写好的AT命令编写MQTT的socket网络函数
 
+nettype_tcp.c
+
 - platform_net_socket_recv_timeout
 - platform_net_socket_write_timeout
 - platform_net_socket_connect
 - platform_net_socket_close
 
 真完蛋，今天装了个项目的环境和跑了一下就没时间了啊啊啊啊啊。
+
+## 2025.07.30
