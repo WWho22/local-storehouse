@@ -11,7 +11,10 @@
 #include "platform_net_socket.h"
 
 
-
+/*
+return <0 err
+return =0 ok
+*/
 
 int platform_net_socket_connect(const char *host, const char *port, int proto)
 {

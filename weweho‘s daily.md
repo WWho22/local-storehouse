@@ -369,3 +369,23 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 新问题：
 
+![image-20250729150224556](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250729150224556.png)
+
+![image-20250729150201611](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250729150201611.png)
+
+
+
+刚开始时，可能会出现ERROR和busy等待的情况，需要继续改进发送逻辑和接收逻辑。
+
+## 2025.07.29
+
+今日目标：
+
+使用已写好的AT命令编写MQTT的socket网络函数
+
+- platform_net_socket_recv_timeout
+- platform_net_socket_write_timeout
+- platform_net_socket_connect
+- platform_net_socket_close
+
+真完蛋，今天装了个项目的环境和跑了一下就没时间了啊啊啊啊啊。
