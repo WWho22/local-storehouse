@@ -357,3 +357,15 @@ FreeRtos的API函数被中断调用时，会判断此时中断的优先级，若
 
 ![image-20250728150521601](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728150521601.png)
 
+问题发现：
+
+之前AT_Receive_Char(&(paser_buf[paser_count]),portMAX_DELAY)单纯只用来接收数据，但是无论有没有接收到数据，paser_count都会加1。而paser_buf[]初始化后，内部数组单元的值都为0x00，因此可以判断为在环形缓冲区没有收到新数据时，paser都会加1，导致paser_buf[paser_count]会出现间隔有0x00的问题。
+
+![image-20250728170126032](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728170126032.png)
+
+问题解决：
+
+![image-20250728170010627](C:\Users\jyq20\Documents\GitHub\local-storehouse\image\image-20250728170010627.png)
+
+新问题：
+

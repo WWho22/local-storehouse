@@ -176,6 +176,10 @@ void ESP8266_PalseTask(void* arg)
 			  paser_count++;
 			 }
 		 }
+				if(paser_count>=30)
+				{
+					paser_count = 0;
+				}
 	}
 }
 
