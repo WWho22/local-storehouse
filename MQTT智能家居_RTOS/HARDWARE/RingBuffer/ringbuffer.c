@@ -4,7 +4,6 @@
 //环形缓冲区初始化
 void RingBuffer_Init(RingBuffer* pRingBuffer,int16_t len)
 {
-//	pRingBuffer->buffer_ptr = ptr;
 	pRingBuffer->read_index = 0;
 	pRingBuffer->write_index = 0;
 	pRingBuffer->buffer_size = len;
@@ -43,7 +42,7 @@ int RingBuffer_ReadByte(RingBuffer* pRingBuffer,unsigned char* pch)
 	else
 	{
 		*pch = pRingBuffer->buffer_ptr[pRingBuffer->read_index];
-		printf("%c",*pch);
+//		printf("%c",*pch);
 		pRingBuffer->read_index = ((pRingBuffer->read_index)+1)%(pRingBuffer->buffer_size);
 		return 0;
 	}

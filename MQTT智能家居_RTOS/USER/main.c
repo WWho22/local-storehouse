@@ -19,10 +19,8 @@ SemaphoreHandle_t mutexhandle;
 SemaphoreHandle_t Esp8266_ParseHandler;
 SemaphoreHandle_t Esp8266_SendHandler;
 RingBuffer test_RingBuffer;
-RingBuffer Uart4_RingBuffer;
+RingBuffer AT_Data_RingBuffer;
 
-unsigned char Public_buffer[1024];
-unsigned char Uart4_buffer[20];
 int AT_LEN = 0;
 //ALIENTEK 探索者STM32F407开发板 实验1
 //跑马灯实验 -库函数版本
@@ -41,7 +39,7 @@ void prvHardware_Init(void)
 	USART2_Init();
 	UART4_Init();
 	RingBuffer_Init(&test_RingBuffer,1024);
-	RingBuffer_Init(&Uart4_RingBuffer,20);
+	RingBuffer_Init(&AT_Data_RingBuffer,1024);
 //	OLED_Init();
 }	
 
@@ -54,6 +52,7 @@ int main(void)
 	//初始化延时函数
    prvHardware_Init();
 	 UART4_Lock_Init();
+	 AT_DataRead_Lock_Init();
 	 Esp8266_Parse_Init();
 	 Usart_SendString(USART2,"Initilize OK\r\n");
 //   Usart_SendString(UART4,"Initialize Finish");

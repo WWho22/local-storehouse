@@ -393,3 +393,66 @@ nettype_tcp.c
 真完蛋，今天装了个项目的环境和跑了一下就没时间了啊啊啊啊啊。
 
 ## 2025.07.30
+
+连接服务器的AT命令流程：
+
+```shell
+AT
+
+// 1. 配置 WiFi 模式
+AT+CWMODE=3						//	softAP+station	mode
+
+// 2. 连接路由器
+AT+CWJAP="SSID","password"		//	SSID	and	password	of	router
+
+// 3. 查询 ESP8266 设备的 IP 地址
+AT+CIFSR
+
+// 响应
++CIFSR:APIP,"192.168.4.1"
++CIFSR:APMAC,"1a:fe:34:a5:8d:c6"
++CIFSR:STAIP,"192.168.3.133"
++CIFSR:STAMAC,"18:fe:34:a5:8d:c6"
+OK
+
+// 4. ESP8266 设备作为 TCP client 连接到服务器
+AT+CIPSTART="TCP","192.168.3.116",8080			 //protocol,	server	IP	and	port
+
+// 5. ESP8266 设备向服务器器发送数据
+AT+CIPSEND=4				//	set	date	length	which	will	be	sent,		such	as	4	bytes	
+>test						//	enter	the	data,		no	CR
+
+// 响应
+Recv	4	bytes
+SEND	OK
+
+// 6. 当 ESP8266 设备接收到服务器器发来的数据，将提示如下信息：
++IPD,n:xxxxxxxxxx				//	received	n	bytes,		data=xxxxxxxxxxx	
+```
+
+## 2025.07.31
+
+今天完成了四个网络读写、连接、断开函数
+
+nettype_tcp.c
+
+- platform_net_socket_recv_timeout
+- platform_net_socket_write_timeout
+- platform_net_socket_connect
+- platform_net_socket_close
+
+新内容：
+
+创建MQTT_Client_Task任务，内部是订阅话题，不断接收话题信息
+
+![image-20250731134952300](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250731134952300.png)
+
+目前的通信流程：
+
+手机发信息给MQTT服务器->MQTT服务器发消息给esp8266WIFI模块->esp8266WIFI模块通过串口发送数据包给MCU->串口中断接收数据，将数据存入环形缓冲区，接收一个数据释放一次数据处理任务的信号量->数据处理任务，如果处理状态是数据包状态，则将数据存入环形缓冲区，释放数据接收任务信号量->数据接收任务读取环形缓冲区。
+
+![image-20250731141718306](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250731141718306.png)
+
+![image-20250731141803701](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250731141803701.png)
+
+![image-20250731141835670](C:\Users\jyq20\Documents\GitHub\local-storehouse\weweho‘s daily.assets\image-20250731141835670.png)

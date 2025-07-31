@@ -144,6 +144,8 @@ void ESP8266_PalseTask(void* arg)
 			 {
 				 if(Get_CIPSEND_Result(paser_buf))
 				 {
+					 SetATStatus(AT_ERROR);
+					 UART4_Unlock();//若收到>，则释放互斥量
 					 return;
 				 }
 				 //判断是否为服务器URC指令回复，是则判断是TRUE，否则是FALSE
@@ -175,7 +177,7 @@ void ESP8266_PalseTask(void* arg)
 			 {
 			  paser_count++;
 			 }
-		 }
+		   }
 				if(paser_count>=30)
 				{
 					paser_count = 0;
@@ -190,7 +192,7 @@ void ESP8266_WriteTask(void* arg)
 			switch(Write_Status)
 			{
 				case WIFISet_Status:
-					UART_AT_Send(AT_WIFI_Mode,strlen(AT_WIFI_Mode),20);
+					UART_AT_Send(AT_WIFI_Mode,20);
 					break;
 				
 				case WIFIConnect_Status:
@@ -202,7 +204,7 @@ void ESP8266_WriteTask(void* arg)
 					break;
 				
 				case IPQuery_Status:
-					UART_AT_Send(AT_IP_Query,strlen(AT_IP_Query),20);
+					UART_AT_Send(AT_IP_Query,20);
 					break;
 				default :
 					break;
@@ -215,7 +217,7 @@ void AT_TestTask(void* arg)
 	int ret = 0;
 	while(1)
 	{
-		ret = UART_AT_Send("AT",strlen(AT_Test),1000);
+		ret = UART_AT_Send("AT",1000);
 		printf("ret is %d\r\n",ret);
 	}
 }

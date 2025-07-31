@@ -46,12 +46,16 @@ enum URC_Rec_Status
 
 
 void URC_handler_Init(void);
+void AT_DataRead_Lock_Init(void);
 void UART4_Lock_Init(void);
 void UART4_Unlock(void);
+void AT_DataRead_Unlock(void);
 void Esp8266_Parse_Init(void);
 void SetATStatus(int status);
 int GetATStatus(void);
-int UART_AT_Send(const char *buf, int len, int timeout);
+int AT_Data_Read(unsigned char *buf, int timeout);
+int UART_AT_Data_Send(const char *buf, int timeout);
+int UART_AT_Send(const char *buf, int timeout);
 int UART_AT_WIFI_CONNECT_Send(const char *buf,char* SSID,char* password,int timeout);
 int UART_AT_SERVER_CONNECT_Send(const char *buf,char* SAddr ,char* Port,int timeout);
 int AT_Receive_Char(char *c, TickType_t timeout);

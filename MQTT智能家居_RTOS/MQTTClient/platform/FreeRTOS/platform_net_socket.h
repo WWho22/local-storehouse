@@ -20,7 +20,8 @@
 #define PLATFORM_NET_PROTO_TCP  0 /**< The TCP transport protocol */
 #define PLATFORM_NET_PROTO_UDP  1 /**< The UDP transport protocol */
 #define socklen_t unsigned int
-
+#define WIFI_Name "106-02"
+#define WIFI_Password "106xuxieweili*106"
 
 int platform_net_socket_connect(const char *host, const char *port, int proto);
 int platform_net_socket_recv(int fd, void *buf, size_t len, int flags);

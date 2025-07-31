@@ -72,7 +72,7 @@ extern TaskHandle_t ESP8266_Write_task_handle;
 extern TaskHandle_t AT_Test_task_handle;
 extern SemaphoreHandle_t mutexhandle;
 extern RingBuffer test_RingBuffer;
-extern RingBuffer Uart4_RingBuffer;
+extern RingBuffer AT_Data_RingBuffer;
 extern SemaphoreHandle_t Esp8266_ParseHandler;//Esp8266的回复处理信号量
 extern SemaphoreHandle_t Esp8266_SendHandler;//Esp8266的AT命令发送信号量
 extern int AT_LEN;//AT命令
